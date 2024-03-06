@@ -1,13 +1,23 @@
-// En el archivo Animal.java
-package animal;
+public class Animal {
+    private String nombre;
+    private String tipo;
+    private String estado;
 
-public abstract class Animal {
-    private String species;
-    private String diet;
-    private double healthStatus;
+    public Animal(String nombre, String tipo, String estado) {
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.estado = estado;
+    }
 
-    // Métodos getter y setter para cada atributo
+    public String getNombre() {
+        return this.nombre;
+    }
 
-    public abstract void eat();
-    public abstract void checkHealthStatus();
+    public String comer() {
+        return "El " + nombre + " está comiendo";
+    }
+
+    public String dormir() {
+        return "El " + nombre + " está durmiendo";
+    }
 }
