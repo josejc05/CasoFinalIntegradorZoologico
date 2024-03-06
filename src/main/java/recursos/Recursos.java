@@ -1,5 +1,5 @@
 // En el archivo Recursos.java
-package mantenimientoYseguridad;
+package recursos;
 
 public class Recursos {
     private String name;
