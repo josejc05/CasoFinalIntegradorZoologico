@@ -1,33 +1,16 @@
 package habitat;
 
-public abstract class Habitat {
-    private String id;
-    private double temperatura;
-    private double humedad;
-    private boolean limpieza;
+public class HabitatAviario extends Habitat {
 
-    public Habitat(String id, double temperatura, double humedad, boolean limpieza) {
-        this.id = id;
-        this.temperatura = temperatura;
-        this.humedad = humedad;
-        this.limpieza = limpieza;
+    public HabitatAviario(String id, double temperatura, double humedad, boolean limpieza) {
+        super(id, temperatura, humedad, limpieza);
     }
 
-    public String getId() {
-        return id;
+    @Override
+    public void monitorear() {
+        System.out.println("Monitoreando el hábitat aviario...");
+        System.out.println("Temperatura: " + getTemperatura());
+        System.out.println("Humedad: " + getHumedad());
+        System.out.println("Limpieza: " + isLimpieza());
     }
-
-    public double getTemperatura() {
-        return temperatura;
-    }
-
-    public double getHumedad() {
-        return humedad;
-    }
-
-    public boolean isLimpieza() {
-        return limpieza;
-    }
-
-    public abstract void monitorear();
 }

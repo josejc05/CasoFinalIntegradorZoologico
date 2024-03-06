@@ -1,4 +1,6 @@
-public abstract class Habitat {
+package habitat;
+
+public class Habitat {
     private String id;
     private double temperatura;
     private double humedad;
@@ -11,7 +13,19 @@ public abstract class Habitat {
         this.limpieza = limpieza;
     }
 
-    // getters y setters
+    public double getTemperatura() {
+        return temperatura;
+    }
 
-    public abstract void monitorear();
+    public double getHumedad() {
+        return humedad;
+    }
+
+    public boolean isLimpieza() {
+        return limpieza;
+    }
+
+    public void monitorear() {
+        // Implementación del método monitorear
+    }
 }

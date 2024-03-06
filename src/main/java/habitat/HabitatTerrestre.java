@@ -1,3 +1,5 @@
+package habitat;
+
 public class HabitatTerrestre extends Habitat {
     private String tipoSuelo;
 
@@ -6,11 +8,20 @@ public class HabitatTerrestre extends Habitat {
         this.tipoSuelo = tipoSuelo;
     }
 
-    // getters y setters
+    public String getTipoSuelo() {
+        return tipoSuelo;
+    }
+
+    public void setTipoSuelo(String tipoSuelo) {
+        this.tipoSuelo = tipoSuelo;
+    }
 
     @Override
     public void monitorear() {
-        // implementar monitoreo específico para hábitat terrestre
+        System.out.println("Monitoreando el hábitat terrestre...");
+        System.out.println("Temperatura: " + getTemperatura());
+        System.out.println("Humedad: " + getHumedad());
+        System.out.println("Limpieza: " + isLimpieza());
+        System.out.println("Tipo de suelo: " + getTipoSuelo());
     }
 }
-

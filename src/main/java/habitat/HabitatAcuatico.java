@@ -1,3 +1,5 @@
+package habitat;
+
 public class HabitatAcuatico extends Habitat {
     private double nivelAgua;
 
@@ -6,10 +8,20 @@ public class HabitatAcuatico extends Habitat {
         this.nivelAgua = nivelAgua;
     }
 
-    // getters y setters
+    public double getNivelAgua() {
+        return nivelAgua;
+    }
+
+    public void setNivelAgua(double nivelAgua) {
+        this.nivelAgua = nivelAgua;
+    }
 
     @Override
     public void monitorear() {
-        // implementar monitoreo específico para hábitat acuático
+        System.out.println("Monitoreando el hábitat acuático...");
+        System.out.println("Temperatura: " + getTemperatura());
+        System.out.println("Humedad: " + getHumedad());
+        System.out.println("Limpieza: " + isLimpieza());
+        System.out.println("Nivel de agua: " + getNivelAgua());
     }
 }
