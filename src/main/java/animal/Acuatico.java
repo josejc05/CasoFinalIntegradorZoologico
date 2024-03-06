@@ -1,16 +1,9 @@
-// En el archivo Acuatico.java
-package animal;
-
 public class Acuatico extends Animal {
-    // Atributos específicos para un animal acuático
-
-    @Override
-    public void eat() {
-        // Implementar la lógica para que el animal acuático coma
+    public Acuatico(String nombre, String estado) {
+        super(nombre, "Acuático", estado);
     }
 
-    @Override
-    public void checkHealthStatus() {
-        // Implementar la lógica para verificar el estado de salud del animal acuático
+    public String nadar() {
+        return "El " + getNombre() + " está nadando";
     }
 }

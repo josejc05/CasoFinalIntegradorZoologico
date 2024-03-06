@@ -1,6 +1,3 @@
-// En el archivo Main.java
-package main;
-
 import animal.Acuatico;
 import animal.Aviario;
 import animal.Terrestre;
