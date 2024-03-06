@@ -1,3 +1,5 @@
+package animal;
+
 public abstract class Animal {
     private String nombre;
     private String alimentacion;
