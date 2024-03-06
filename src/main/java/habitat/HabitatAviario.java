@@ -1,17 +1,33 @@
-// En el archivo HabitatAviario.java
 package habitat;
 
-public class HabitatAviario extends Habitat {
-    private int numberOfBirds;
+public abstract class Habitat {
+    private String id;
+    private double temperatura;
+    private double humedad;
+    private boolean limpieza;
 
-    public HabitatAviario(int numberOfBirds) {
-        this.numberOfBirds = numberOfBirds;
+    public Habitat(String id, double temperatura, double humedad, boolean limpieza) {
+        this.id = id;
+        this.temperatura = temperatura;
+        this.humedad = humedad;
+        this.limpieza = limpieza;
     }
 
-    // Métodos getter y setter para numberOfBirds
-
-    @Override
-    public void monitorConditions() {
-        // Implementar la lógica para monitorear las condiciones del aviario
+    public String getId() {
+        return id;
     }
+
+    public double getTemperatura() {
+        return temperatura;
+    }
+
+    public double getHumedad() {
+        return humedad;
+    }
+
+    public boolean isLimpieza() {
+        return limpieza;
+    }
+
+    public abstract void monitorear();
 }

@@ -1,10 +1,17 @@
-// En el archivo Habitat.java
-package habitat;
-
 public abstract class Habitat {
-    // Atributos comunes a todos los hábitats
+    private String id;
+    private double temperatura;
+    private double humedad;
+    private boolean limpieza;
 
-    // Métodos getter y setter para cada atributo
+    public Habitat(String id, double temperatura, double humedad, boolean limpieza) {
+        this.id = id;
+        this.temperatura = temperatura;
+        this.humedad = humedad;
+        this.limpieza = limpieza;
+    }
 
-    public abstract void monitorConditions();
+    // getters y setters
+
+    public abstract void monitorear();
 }

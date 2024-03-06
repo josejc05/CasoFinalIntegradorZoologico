@@ -1,17 +1,15 @@
-// En el archivo HabitatAcuatico.java
-package habitat;
-
 public class HabitatAcuatico extends Habitat {
-    private double waterQuality;
+    private double nivelAgua;
 
-    public HabitatAcuatico(double waterQuality) {
-        this.waterQuality = waterQuality;
+    public HabitatAcuatico(String id, double temperatura, double humedad, boolean limpieza, double nivelAgua) {
+        super(id, temperatura, humedad, limpieza);
+        this.nivelAgua = nivelAgua;
     }
 
-    // Métodos getter y setter para waterQuality
+    // getters y setters
 
     @Override
-    public void monitorConditions() {
-        // Implementar la lógica para monitorear las condiciones del hábitat acuático
+    public void monitorear() {
+        // implementar monitoreo específico para hábitat acuático
     }
 }
