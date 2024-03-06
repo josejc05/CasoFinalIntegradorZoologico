@@ -1,12 +1,17 @@
-// En el archivo Habitat.java
-package habitat;
+public class Habitat {
+    private String tipo;
+    private double temperatura;
+    private double humedad;
+    private String limpieza;
 
-public abstract class Habitat {
-    private double temperature;
-    private double humidity;
-    private boolean isClean;
+    public Habitat(String tipo, double temperatura, double humedad, String limpieza) {
+        this.tipo = tipo;
+        this.temperatura = temperatura;
+        this.humedad = humedad;
+        this.limpieza = limpieza;
+    }
 
-    // Métodos getter y setter para cada atributo
-
-    public abstract void monitorConditions();
+    public String monitorearCondiciones() {
+        return "Monitoreando condiciones del hábitat " + tipo;
+    }
 }
