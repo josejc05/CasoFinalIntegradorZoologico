@@ -1,5 +1,4 @@
 import habitat.*;
-import animal.*;
 import visitor.*;
 import resource.*;
 import maintenance.*;
@@ -8,7 +7,7 @@ import security.*;
 public class Main {
     public static void main(String[] args) {
         // Crear instancias de las clases de los diferentes módulos
-        AquaticHabitat aquaticHabitat = new AquaticHabitat();
+        HabitatAcuatico aquaticHabitat = new HabitatAcuatico();
         Lion lion = new Lion();
         Visitor visitor = new Visitor();
         Food food = new Food();
