@@ -1,4 +1,5 @@
 package habitat;
 
-public class HabitatAviario {
+public abstract class HabitatAviario {
+    public abstract void monitorConditions();
 }
