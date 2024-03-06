@@ -1,35 +1,22 @@
-// En el archivo Main.java
-import animal.Acuatico;
-import animal.Aviario;
-import animal.Terrestre;
-import habitat.HabitatAcuatico;
-import habitat.HabitatAviario;
-import visitante.Visitante;
+// En el archivo Aviario.java
+package animal;
 
-public class Main {
-    public static void main(String[] args) {
-        Acuatico acuatico = new Acuatico("Delfín", "Saludable");
-        Aviario aviario = new Aviario("Águila", "Saludable");
-        Terrestre terrestre = new Terrestre("Elefante", "Saludable");
+public class Aviario extends Animal {
+    public Aviario(String nombre, String estado) {
+        super(nombre, "Aviario", estado);
+    }
 
-        HabitatAcuatico habitatAcuatico = new HabitatAcuatico(0.9);
-        HabitatAviario habitatAviario = new HabitatAviario(10);
+    public String volar() {
+        return "El " + getNombre() + " está volando";
+    }
 
-        Visitante visitante = new Visitante("Jose", "Aves");
+    @Override
+    public String comer() {
+        return "El " + getNombre() + " está comiendo";
+    }
 
-        // Llamar a los métodos de cada objeto
-        System.out.println(acuatico.comer());
-        System.out.println(acuatico.dormir());
-        System.out.println(acuatico.nadar());
-
-        System.out.println(aviario.comer());
-        System.out.println(aviario.dormir());
-        System.out.println(aviario.volar());
-
-        System.out.println(terrestre.comer());
-        System.out.println(terrestre.dormir());
-        System.out.println(terrestre.caminar());
-
-        visitante.visit(habitatAviario);
+    @Override
+    public String dormir() {
+        return "El " + getNombre() + " está durmiendo";
     }
 }

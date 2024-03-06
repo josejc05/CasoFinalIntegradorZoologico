@@ -1,17 +1,10 @@
-public class Habitat {
-    private String tipo;
-    private double temperatura;
-    private double humedad;
-    private String limpieza;
+// En el archivo Habitat.java
+package habitat;
 
-    public Habitat(String tipo, double temperatura, double humedad, String limpieza) {
-        this.tipo = tipo;
-        this.temperatura = temperatura;
-        this.humedad = humedad;
-        this.limpieza = limpieza;
-    }
+public abstract class Habitat {
+    // Atributos comunes a todos los hábitats
 
-    public String monitorearCondiciones() {
-        return "Monitoreando condiciones del hábitat " + tipo;
-    }
+    // Métodos getter y setter para cada atributo
+
+    public abstract void monitorConditions();
 }
