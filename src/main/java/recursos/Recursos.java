@@ -11,9 +11,33 @@ public class Recursos {
         this.cantidadDePersonal = cantidadDePersonal;
     }
 
-    // getters y setters
+    public int getCantidadDeAlimento() {
+        return cantidadDeAlimento;
+    }
+
+    public void setCantidadDeAlimento(int cantidadDeAlimento) {
+        this.cantidadDeAlimento = cantidadDeAlimento;
+    }
+
+    public int getCantidadDeMedicinas() {
+        return cantidadDeMedicinas;
+    }
+
+    public void setCantidadDeMedicinas(int cantidadDeMedicinas) {
+        this.cantidadDeMedicinas = cantidadDeMedicinas;
+    }
+
+    public int getCantidadDePersonal() {
+        return cantidadDePersonal;
+    }
+
+    public void setCantidadDePersonal(int cantidadDePersonal) {
+        this.cantidadDePersonal = cantidadDePersonal;
+    }
 
     public void gestionarRecursos() {
-        // Implementación del método gestionarRecursos
+        System.out.println("Cantidad de alimento: " + cantidadDeAlimento);
+        System.out.println("Cantidad de medicinas: " + cantidadDeMedicinas);
+        System.out.println("Cantidad de personal: " + cantidadDePersonal);
     }
 }
