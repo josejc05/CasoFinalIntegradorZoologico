@@ -1,15 +1,14 @@
 package habitat;
 
-import java.util.ArrayList;
-import java.util.List;
 import animal.Animal;
+import java.util.ArrayList;
 
 public class Habitat {
     private String id;
     private double temperatura;
     private double humedad;
     private boolean limpieza;
-    private List<Animal> animales;
+    private ArrayList<Animal> animales;
 
     public Habitat(String id, double temperatura, double humedad, boolean limpieza) {
         this.id = id;
@@ -35,48 +34,18 @@ public class Habitat {
         return limpieza;
     }
 
-    public List<Animal> getAnimales() {
+    public ArrayList<Animal> getAnimales() {
         return animales;
     }
 
-    public void monitorear() {
+    public void agregarAnimal(Animal animal) {
+        animales.add(animal);
+    }
+
+    public void mostrarInformacion() {
         System.out.println("ID: " + id);
         System.out.println("Temperatura: " + temperatura);
         System.out.println("Humedad: " + humedad);
-        System.out.println("Limpieza: " + (limpieza ? "Sí" : "No"));
-    }
-
-    public void agregarAnimal(Animal animal) {
-        this.animales.add(animal);
-    }
-
-    public void removerAnimal(Animal animal) {
-        this.animales.remove(animal);
-    }
-
-    public Animal buscarAnimal(String nombre) {
-        for (Animal animal : this.animales) {
-            if (animal.getNombre().equals(nombre)) {
-                return animal;
-            }
-        }
-        return null;
-    }
-
-    public void mostrarAnimales() {
-        System.out.println("Animales en el hábitat:");
-        for (Animal animal : this.animales) {
-            System.out.println("- " + animal.getNombre());
-        }
-    }
-
-    @Override
-    public String toString() {
-        return "Habitat{" +
-                "id='" + id + '\'' +
-                ", temperatura=" + temperatura +
-                ", humedad=" + humedad +
-                ", limpieza=" + limpieza +
-                '}';
+        System.out.println("Limpieza: " + (limpieza ? "Limpio" : "Sucio"));
     }
 }
