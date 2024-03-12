@@ -12,6 +12,10 @@ public class Terrestre extends Animal {
 
     @Override
     public void mostrarInformacion() {
-        // Implementación del método mostrarInformacion
+        System.out.println("Nombre: " + getNombre());
+        System.out.println("Alimentación: " + getAlimentacion());
+        System.out.println("Salud: " + getSalud());
+        System.out.println("Comportamiento: " + getComportamiento());
+        System.out.println("Tipo de suelo: " + tipoSuelo);
     }
 }
