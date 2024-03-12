@@ -137,6 +137,7 @@ public class Main {
             Animal animalSeleccionado = habitatSeleccionado.getAnimales().get(animalChoice - 1);
             Visitante visitante = new Visitante("Juan", 25);
             visitante.visitarAnimal(animalSeleccionado);
+            animalSeleccionado.mostrarInformacion();
         } else {
             System.out.println("No se reconoce el tipo de usuario seleccionado.");
         }

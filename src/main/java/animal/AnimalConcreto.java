@@ -7,6 +7,8 @@ public class AnimalConcreto extends Animal {
 
     @Override
     public void mostrarInformacion() {
-        // Implementa este método según tus necesidades
+        System.out.println("Nombre: " + getNombre());
+        System.out.println("Tipo de alimentación: " + getTipoAlimentacion());
+        // Imprime los demás atributos del animal
     }
 }
