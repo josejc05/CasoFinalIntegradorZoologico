@@ -78,10 +78,66 @@ public class Main {
 
             Visitante visitante = new Visitante("Juan", 25);
             visitante.visitarAnimal(habitatSeleccionado.getAnimales().get(animalChoice - 1));
-        } else if (userType.equalsIgnoreCase("T")) {
-            System.out.println("Eres un trabajador. Realiza tus tareas.");
-        } else {
-            System.out.println("No se reconoce el tipo de usuario seleccionado.");
+        } if (userType.equalsIgnoreCase("T")) {
+            System.out.println("Eres un trabajador. ¿Qué tarea quieres realizar? (Vigilar/Seguimiento)");
+            String tarea = scanner.nextLine();
+
+            if (tarea.equalsIgnoreCase("Vigilar")) {
+                System.out.println("¿Qué hábitat quieres vigilar? (Sabana/Océano/Montañas)");
+                String habitatChoice = scanner.nextLine();
+
+                Habitat habitatSeleccionado;
+                switch (habitatChoice.toLowerCase()) {
+                    case "sabana":
+                        habitatSeleccionado = sabana;
+                        break;
+                    case "océano":
+                        habitatSeleccionado = oceano;
+                        break;
+                    case "montañas":
+                        habitatSeleccionado = montanas;
+                        break;
+                    default:
+                        System.out.println("No se reconoce el hábitat seleccionado.");
+                        return;
+                }
+
+                Vigilar vigilante = new Vigilar("Pedro", 30);
+                vigilante.vigilarHabitat(habitatSeleccionado);
+
+            } else if (tarea.equalsIgnoreCase("Seguimiento")) {
+                System.out.println("¿Qué hábitat quieres seleccionar para el seguimiento? (Sabana/Océano/Montañas)");
+                String habitatChoice = scanner.nextLine();
+
+                Habitat habitatSeleccionado;
+                switch (habitatChoice.toLowerCase()) {
+                    case "sabana":
+                        habitatSeleccionado = sabana;
+                        break;
+                    case "océano":
+                        habitatSeleccionado = oceano;
+                        break;
+                    case "montañas":
+                        habitatSeleccionado = montanas;
+                        break;
+                    default:
+                        System.out.println("No se reconoce el hábitat seleccionado.");
+                        return;
+                }
+
+                System.out.println("¿Qué animal quieres seleccionar para el seguimiento? (1/2/3)");
+                int animalChoice = scanner.nextInt();
+
+                if (animalChoice < 1 || animalChoice > 3) {
+                    System.out.println("No se reconoce el animal seleccionado.");
+                    return;
+                }
+
+                Seguimiento seguimiento = new Seguimiento("Pedro", 30);
+                seguimiento.hacerSeguimiento(habitatSeleccionado.getAnimales().get(animalChoice - 1));
+            } else {
+                System.out.println("No se reconoce la tarea seleccionada.");
+            }
         }
     }
 }
