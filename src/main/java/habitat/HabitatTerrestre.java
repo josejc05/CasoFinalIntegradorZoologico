@@ -1,27 +1,35 @@
 package habitat;
 
 public class HabitatTerrestre extends Habitat {
-    private String tipoSuelo;
+    private String tipoTerreno;
+    private boolean tieneCuevas;
 
-    public HabitatTerrestre(String id, double temperatura, double humedad, boolean limpieza, String tipoSuelo) {
+    public HabitatTerrestre(String id, double temperatura, double humedad, boolean limpieza, String tipoTerreno, boolean tieneCuevas) {
         super(id, temperatura, humedad, limpieza);
-        this.tipoSuelo = tipoSuelo;
+        this.tipoTerreno = tipoTerreno;
+        this.tieneCuevas = tieneCuevas;
     }
 
-    public String getTipoSuelo() {
-        return tipoSuelo;
+    public String getTipoTerreno() {
+        return tipoTerreno;
     }
 
-    public void setTipoSuelo(String tipoSuelo) {
-        this.tipoSuelo = tipoSuelo;
+    public void setTipoTerreno(String tipoTerreno) {
+        this.tipoTerreno = tipoTerreno;
+    }
+
+    public boolean tieneCuevas() {
+        return tieneCuevas;
+    }
+
+    public void setTieneCuevas(boolean tieneCuevas) {
+        this.tieneCuevas = tieneCuevas;
     }
 
     @Override
     public void monitorear() {
-        System.out.println("Monitoreando el hábitat terrestre...");
-        System.out.println("Temperatura: " + getTemperatura());
-        System.out.println("Humedad: " + getHumedad());
-        System.out.println("Limpieza: " + isLimpieza());
-        System.out.println("Tipo de suelo: " + getTipoSuelo());
+        super.monitorear();
+        System.out.println("Tipo de terreno: " + getTipoTerreno());
+        System.out.println("Tiene cuevas: " + (tieneCuevas() ? "Sí" : "No"));
     }
 }

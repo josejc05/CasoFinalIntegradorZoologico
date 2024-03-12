@@ -2,10 +2,12 @@ package habitat;
 
 public class HabitatAcuatico extends Habitat {
     private double nivelAgua;
+    private boolean esSalado;
 
-    public HabitatAcuatico(String id, double temperatura, double humedad, boolean limpieza, double nivelAgua) {
+    public HabitatAcuatico(String id, double temperatura, double humedad, boolean limpieza, double nivelAgua, boolean esSalado) {
         super(id, temperatura, humedad, limpieza);
         this.nivelAgua = nivelAgua;
+        this.esSalado = esSalado;
     }
 
     public double getNivelAgua() {
@@ -16,12 +18,18 @@ public class HabitatAcuatico extends Habitat {
         this.nivelAgua = nivelAgua;
     }
 
+    public boolean esSalado() {
+        return esSalado;
+    }
+
+    public void setEsSalado(boolean esSalado) {
+        this.esSalado = esSalado;
+    }
+
     @Override
     public void monitorear() {
-        System.out.println("Monitoreando el hábitat acuático...");
-        System.out.println("Temperatura: " + getTemperatura());
-        System.out.println("Humedad: " + getHumedad());
-        System.out.println("Limpieza: " + isLimpieza());
+        super.monitorear();
         System.out.println("Nivel de agua: " + getNivelAgua());
+        System.out.println("Es salado: " + (esSalado() ? "Sí" : "No"));
     }
 }

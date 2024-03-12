@@ -1,51 +1,35 @@
 package habitat;
 
-import animal.*;
-import java.util.ArrayList;
-import java.util.List;
+public class HabitatTerrestre extends Habitat {
+    private String tipoTerreno;
+    private boolean tieneCuevas;
 
-public class Habitat {
-    private String nombre;
-    private double area;
-    private double temperatura;
-    private boolean esNatural;
-    private List<Animal> animales; // Lista de animales en el hábitat
-
-    public Habitat(String nombre, double area, double temperatura, boolean esNatural) {
-        this.nombre = nombre;
-        this.area = area;
-        this.temperatura = temperatura;
-        this.esNatural = esNatural;
-        this.animales = new ArrayList<>();
+    public HabitatTerrestre(String id, double temperatura, double humedad, boolean limpieza, String tipoTerreno, boolean tieneCuevas) {
+        super(id, temperatura, humedad, limpieza);
+        this.tipoTerreno = tipoTerreno;
+        this.tieneCuevas = tieneCuevas;
     }
 
-    // getters y setters
-
-    public List<Animal> getAnimales() {
-        return animales;
+    public String getTipoTerreno() {
+        return tipoTerreno;
     }
 
-    public void agregarAnimal(Animal animal) {
-        this.animales.add(animal);
+    public void setTipoTerreno(String tipoTerreno) {
+        this.tipoTerreno = tipoTerreno;
     }
 
-    // Método para mostrar todos los animales en el hábitat
-    public void mostrarAnimales() {
-        System.out.println("Animales en el hábitat " + nombre + ":");
-        for (Animal animal : animales) {
-            System.out.println("- " + animal.getNombre());
-        }
+    public boolean tieneCuevas() {
+        return tieneCuevas;
     }
 
-    // Método para buscar un animal específico en el hábitat
-    public Animal buscarAnimal(String nombreAnimal) {
-        for (Animal animal : animales) {
-            if (animal.getNombre().equalsIgnoreCase(nombreAnimal)) {
-                return animal;
-            }
-        }
-        return null;
+    public void setTieneCuevas(boolean tieneCuevas) {
+        this.tieneCuevas = tieneCuevas;
     }
 
-    // Otros métodos...
+    @Override
+    public void monitorear() {
+        super.monitorear();
+        System.out.println("Tipo de terreno: " + getTipoTerreno());
+        System.out.println("Tiene cuevas: " + (tieneCuevas() ? "Sí" : "No"));
+    }
 }
