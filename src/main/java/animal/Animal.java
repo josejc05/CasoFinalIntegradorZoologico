@@ -13,7 +13,21 @@ public abstract class Animal {
         this.comportamiento = comportamiento;
     }
 
-    // getters y setters
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getAlimentacion() {
+        return alimentacion;
+    }
+
+    public String getSalud() {
+        return salud;
+    }
+
+    public String getComportamiento() {
+        return comportamiento;
+    }
 
     public abstract void mostrarInformacion();
 }
