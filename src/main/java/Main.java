@@ -99,7 +99,7 @@ public class Main {
                     return;
                 }
 
-                Seguimiento seguimiento = new Seguimiento("Pedro", 30, habitatSeleccionado.getAnimales().get(animalChoice - 1));
+                Seguimiento seguimiento = new Seguimiento("Pedro", 30, habitatSeleccionado.getAnimales().get(animalChoice - 1), habitatSeleccionado);
                 seguimiento.hacerSeguimiento();
             } else {
                 System.out.println("No se reconoce la tarea seleccionada.");
