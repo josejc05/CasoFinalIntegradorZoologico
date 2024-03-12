@@ -1,23 +1,31 @@
 package mantenimientoYseguridad;
 
-import animal.Animal;
+import habitat.Habitat;
 
 public class Vigilar {
-    private Animal animal;
+    private String nombre;
+    private int edad;
+    private Habitat habitat;
 
-    public Vigilar(Animal animal) {
-        this.animal = animal;
+    public Vigilar(String nombre, int edad, Habitat habitat) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.habitat = habitat;
     }
 
-    public Animal getAnimal() {
-        return animal;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setAnimal(Animal animal) {
-        this.animal = animal;
+    public int getEdad() {
+        return edad;
     }
 
-    public void supervisarAnimal() {
-        System.out.println("Supervisando al animal: " + animal.toString());
+    public Habitat getHabitat() {
+        return habitat;
+    }
+
+    public void vigilarHabitat() {
+        System.out.println("El trabajador " + nombre + " está vigilando el hábitat: " + habitat.getId());
     }
 }
