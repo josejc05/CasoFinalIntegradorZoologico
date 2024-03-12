@@ -21,6 +21,10 @@ public class Habitat {
 
     // getters y setters
 
+    public List<Animal> getAnimales() {
+        return animales;
+    }
+
     public void monitorear() {
         System.out.println("ID: " + id);
         System.out.println("Temperatura: " + temperatura);
