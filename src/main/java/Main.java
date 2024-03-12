@@ -23,7 +23,15 @@ public class Main {
         AnimalConcreto tiburon = new AnimalConcreto("Tiburón", "Carnívoro", "", "");
         AnimalConcreto oso = new AnimalConcreto("Oso", "Omnívoro", "", "");
 
+        // Crear más animales
+        AnimalConcreto elefante = new AnimalConcreto("Elefante", "Herbívoro", "", "");
+        AnimalConcreto jirafa = new AnimalConcreto("Jirafa", "Herbívoro", "", "");
+
+        // Añadir los animales a la sabana
         sabana.agregarAnimal(leon);
+        sabana.agregarAnimal(elefante);
+        sabana.agregarAnimal(jirafa);
+
         oceano.agregarAnimal(tiburon);
         montanas.agregarAnimal(oso);
 
