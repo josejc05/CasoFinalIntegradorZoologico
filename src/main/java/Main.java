@@ -19,9 +19,9 @@ public class Main {
         Habitat montanas = new Habitat("Montañas", 300.0, 225.0, true); // Aquí debes crear el hábitat de las montañas
 
         // Crear los animales y añadirlos a los hábitats
-        AnimalConcreto leon = new AnimalConcreto("León", "Carnívoro");
-        AnimalConcreto tiburon = new AnimalConcreto("Tiburón", "Carnívoro");
-        AnimalConcreto oso = new AnimalConcreto("Oso", "Omnívoro");
+        AnimalConcreto leon = new AnimalConcreto("León", "Carnívoro", "", "");
+        AnimalConcreto tiburon = new AnimalConcreto("Tiburón", "Carnívoro", "", "");
+        AnimalConcreto oso = new AnimalConcreto("Oso", "Omnívoro", "", "");
 
         sabana.agregarAnimal(leon);
         oceano.agregarAnimal(tiburon);
@@ -88,7 +88,27 @@ public class Main {
                 System.out.println("No se reconoce la tarea seleccionada.");
             }
         } else if (userType.equalsIgnoreCase("V")) {
-            // Aquí puedes agregar el código para manejar las acciones del visitante
+            System.out.println("Eres un visitante. ¿Qué animal quieres visitar? (León/Tiburón/Oso)");
+            String animalChoice = scanner.nextLine();
+
+            Animal animalSeleccionado;
+            switch (animalChoice.toLowerCase()) {
+                case "león":
+                    animalSeleccionado = leon;
+                    break;
+                case "tiburón":
+                    animalSeleccionado = tiburon;
+                    break;
+                case "oso":
+                    animalSeleccionado = oso;
+                    break;
+                default:
+                    System.out.println("No se reconoce el animal seleccionado.");
+                    return;
+            }
+
+            Visitante visitante = new Visitante("Juan", 25);
+            visitante.visitarAnimal(animalSeleccionado);
         } else {
             System.out.println("No se reconoce el tipo de usuario seleccionado.");
         }
