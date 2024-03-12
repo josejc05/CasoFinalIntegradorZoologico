@@ -1,6 +1,6 @@
 package visitante;
 
-import animal.*;
+import animal.Animal;
 
 public class Visitante {
     private String nombre;
@@ -11,8 +11,16 @@ public class Visitante {
         this.edad = edad;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
     public void visitarAnimal(Animal animal) {
-        System.out.println(nombre + " está visitando a " + animal.getNombre());
+        System.out.println("El visitante " + nombre + " está visitando al animal: " + animal.getNombre());
         animal.mostrarInformacion();
     }
 }

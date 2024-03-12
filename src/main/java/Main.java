@@ -19,25 +19,25 @@ public class Main {
         Habitat terrestre = new Habitat("Terrestre", 300.0, 225.0, true);
 
         // Crear los animales y añadirlos a los hábitats
-        AnimalConcreto tiburon = new AnimalConcreto("Tiburón", "Carnívoro", "", "");
-        AnimalConcreto delfin = new AnimalConcreto("Delfín", "Carnívoro", "", "");
-        AnimalConcreto ballena = new AnimalConcreto("Ballena", "Herbívoro", "", "");
+        AnimalConcreto tiburon = new AnimalConcreto("Tiburón", "Carnívoro", "Saludable", "Agresivo");
+        AnimalConcreto delfin = new AnimalConcreto("Delfín", "Carnívoro", "Saludable", "Amigable");
+        AnimalConcreto ballena = new AnimalConcreto("Ballena", "Herbívoro", "Saludable", "Tranquilo");
 
         acuatico.agregarAnimal(tiburon);
         acuatico.agregarAnimal(delfin);
         acuatico.agregarAnimal(ballena);
 
-        AnimalConcreto aguila = new AnimalConcreto("Águila", "Carnívoro", "", "");
-        AnimalConcreto loro = new AnimalConcreto("Loro", "Herbívoro", "", "");
-        AnimalConcreto pinguino = new AnimalConcreto("Pingüino", "Carnívoro", "", "");
+        AnimalConcreto aguila = new AnimalConcreto("Águila", "Carnívoro", "Saludable", "Agresivo");
+        AnimalConcreto loro = new AnimalConcreto("Loro", "Herbívoro", "Saludable", "Amigable");
+        AnimalConcreto pinguino = new AnimalConcreto("Pingüino", "Carnívoro", "Saludable", "Tranquilo");
 
         aviario.agregarAnimal(aguila);
         aviario.agregarAnimal(loro);
         aviario.agregarAnimal(pinguino);
 
-        AnimalConcreto leon = new AnimalConcreto("León", "Carnívoro", "", "");
-        AnimalConcreto elefante = new AnimalConcreto("Elefante", "Herbívoro", "", "");
-        AnimalConcreto jirafa = new AnimalConcreto("Jirafa", "Herbívoro", "", "");
+        AnimalConcreto leon = new AnimalConcreto("León", "Carnívoro", "Saludable", "Agresivo");
+        AnimalConcreto elefante = new AnimalConcreto("Elefante", "Herbívoro", "Saludable", "Amigable");
+        AnimalConcreto jirafa = new AnimalConcreto("Jirafa", "Herbívoro", "Saludable", "Tranquilo");
 
         terrestre.agregarAnimal(leon);
         terrestre.agregarAnimal(elefante);
@@ -137,7 +137,6 @@ public class Main {
             Animal animalSeleccionado = habitatSeleccionado.getAnimales().get(animalChoice - 1);
             Visitante visitante = new Visitante("Juan", 25);
             visitante.visitarAnimal(animalSeleccionado);
-            animalSeleccionado.mostrarInformacion();
         } else {
             System.out.println("No se reconoce el tipo de usuario seleccionado.");
         }

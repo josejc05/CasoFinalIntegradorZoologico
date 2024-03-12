@@ -1,14 +1,15 @@
 package animal;
 
 public class AnimalConcreto extends Animal {
-    public AnimalConcreto(String nombre, String tipoAlimentacion, String argumento3, String argumento4) {
-        super(nombre, tipoAlimentacion, argumento3, argumento4);
+    public AnimalConcreto(String nombre, String alimentacion, String salud, String comportamiento) {
+        super(nombre, alimentacion, salud, comportamiento);
     }
 
     @Override
     public void mostrarInformacion() {
         System.out.println("Nombre: " + getNombre());
-        System.out.println("Tipo de alimentación: " + getTipoAlimentacion());
-        // Imprime los demás atributos del animal
+        System.out.println("Alimentación: " + getAlimentacion());
+        System.out.println("Salud: " + getSalud());
+        System.out.println("Comportamiento: " + getComportamiento());
     }
 }
