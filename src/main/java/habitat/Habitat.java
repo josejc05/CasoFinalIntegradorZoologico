@@ -1,55 +1,51 @@
 package habitat;
 
+import animal.*;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Habitat {
-    private String id;
+    private String nombre;
+    private double area;
     private double temperatura;
-    private double humedad;
-    private boolean limpieza;
+    private boolean esNatural;
+    private List<Animal> animales; // Lista de animales en el hábitat
 
-    public Habitat(String id, double temperatura, double humedad, boolean limpieza) {
-        this.id = id;
+    public Habitat(String nombre, double area, double temperatura, boolean esNatural) {
+        this.nombre = nombre;
+        this.area = area;
         this.temperatura = temperatura;
-        this.humedad = humedad;
-        this.limpieza = limpieza;
+        this.esNatural = esNatural;
+        this.animales = new ArrayList<>();
     }
 
-    public String getId() {
-        return id;
+    // getters y setters
+
+    public List<Animal> getAnimales() {
+        return animales;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void agregarAnimal(Animal animal) {
+        this.animales.add(animal);
     }
 
-    public double getTemperatura() {
-        return temperatura;
+    // Método para mostrar todos los animales en el hábitat
+    public void mostrarAnimales() {
+        System.out.println("Animales en el hábitat " + nombre + ":");
+        for (Animal animal : animales) {
+            System.out.println("- " + animal.getNombre());
+        }
     }
 
-    public void setTemperatura(double temperatura) {
-        this.temperatura = temperatura;
+    // Método para buscar un animal específico en el hábitat
+    public Animal buscarAnimal(String nombreAnimal) {
+        for (Animal animal : animales) {
+            if (animal.getNombre().equalsIgnoreCase(nombreAnimal)) {
+                return animal;
+            }
+        }
+        return null;
     }
 
-    public double getHumedad() {
-        return humedad;
-    }
-
-    public void setHumedad(double humedad) {
-        this.humedad = humedad;
-    }
-
-    public boolean isLimpieza() {
-        return limpieza;
-    }
-
-    public void setLimpieza(boolean limpieza) {
-        this.limpieza = limpieza;
-    }
-
-    public void monitorear() {
-        System.out.println("Monitoreando el hábitat...");
-        System.out.println("ID: " + getId());
-        System.out.println("Temperatura: " + getTemperatura());
-        System.out.println("Humedad: " + getHumedad());
-        System.out.println("Limpieza: " + isLimpieza());
-    }
+    // Otros métodos...
 }
