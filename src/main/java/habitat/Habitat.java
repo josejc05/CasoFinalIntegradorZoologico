@@ -54,4 +54,11 @@ public class Habitat {
             System.out.println((i + 1) + ". " + animales.get(i).getNombre());
         }
     }
+
+    public void monitorear() {
+        System.out.println("ID: " + id);
+        System.out.println("Temperatura: " + temperatura);
+        System.out.println("Humedad: " + humedad);
+        System.out.println("Limpieza: " + (limpieza ? "Limpio" : "Sucio"));
+    }
 }

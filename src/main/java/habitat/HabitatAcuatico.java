@@ -14,16 +14,8 @@ public class HabitatAcuatico extends Habitat {
         return nivelAgua;
     }
 
-    public void setNivelAgua(double nivelAgua) {
-        this.nivelAgua = nivelAgua;
-    }
-
     public boolean esSalado() {
         return esSalado;
-    }
-
-    public void setEsSalado(boolean esSalado) {
-        this.esSalado = esSalado;
     }
 
     @Override
