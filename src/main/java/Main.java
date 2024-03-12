@@ -11,12 +11,12 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         // Definir las variables
-        String userType = "T"; // Aquí debes obtener el tipo de usuario de alguna manera
+        System.out.println("¿Eres un visitante o un trabajador? (V/T)");
+        String userType = scanner.nextLine(); // Aquí el usuario introduce su tipo
+
         Habitat sabana = new Habitat("Sabana", 100.0, 75.0, true); // Aquí debes crear el hábitat de la sabana
         Habitat oceano = new Habitat("Océano", 200.0, 150.0, false); // Aquí debes crear el hábitat del océano
         Habitat montanas = new Habitat("Montañas", 300.0, 225.0, true); // Aquí debes crear el hábitat de las montañas
-
-        // ... (El resto de tu código se mantiene igual)
 
         if (userType.equalsIgnoreCase("T")) {
             System.out.println("Eres un trabajador. ¿Qué tarea quieres realizar? (Vigilar/Seguimiento)");
@@ -78,6 +78,10 @@ public class Main {
             } else {
                 System.out.println("No se reconoce la tarea seleccionada.");
             }
+        } else if (userType.equalsIgnoreCase("V")) {
+            // Aquí puedes agregar el código para manejar las acciones del visitante
+        } else {
+            System.out.println("No se reconoce el tipo de usuario seleccionado.");
         }
     }
 }

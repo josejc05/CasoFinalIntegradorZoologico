@@ -19,7 +19,21 @@ public class Habitat {
         this.animales = new ArrayList<>();
     }
 
-    // getters y setters
+    public String getId() {
+        return id;
+    }
+
+    public double getTemperatura() {
+        return temperatura;
+    }
+
+    public double getHumedad() {
+        return humedad;
+    }
+
+    public boolean isLimpieza() {
+        return limpieza;
+    }
 
     public List<Animal> getAnimales() {
         return animales;
@@ -54,5 +68,15 @@ public class Habitat {
         for (Animal animal : this.animales) {
             System.out.println("- " + animal.getNombre());
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Habitat{" +
+                "id='" + id + '\'' +
+                ", temperatura=" + temperatura +
+                ", humedad=" + humedad +
+                ", limpieza=" + limpieza +
+                '}';
     }
 }
