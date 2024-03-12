@@ -89,25 +89,36 @@ public class Main {
                 System.out.println("No se reconoce la tarea seleccionada.");
             }
         } else if (userType.equalsIgnoreCase("V")) {
-            System.out.println("Eres un visitante. ¿Qué animal quieres visitar? (León/Tiburón/Oso)");
-            String animalChoice = scanner.nextLine();
+            System.out.println("Eres un visitante. ¿Qué hábitat quieres visitar? (Sabana/Océano/Montañas)");
+            String habitatChoice = scanner.nextLine();
 
-            Animal animalSeleccionado;
-            switch (animalChoice.toLowerCase()) {
-                case "león":
-                    animalSeleccionado = leon;
+            Habitat habitatSeleccionado;
+            switch (habitatChoice.toLowerCase()) {
+                case "sabana":
+                    habitatSeleccionado = sabana;
                     break;
-                case "tiburón":
-                    animalSeleccionado = tiburon;
+                case "océano":
+                    habitatSeleccionado = oceano;
                     break;
-                case "oso":
-                    animalSeleccionado = oso;
+                case "montañas":
+                    habitatSeleccionado = montanas;
                     break;
                 default:
-                    System.out.println("No se reconoce el animal seleccionado.");
+                    System.out.println("No se reconoce el hábitat seleccionado.");
                     return;
             }
 
+            habitatSeleccionado.mostrarAnimales();
+            System.out.println("¿Qué animal quieres visitar? (1/2/3)");
+            int animalChoice = scanner.nextInt();
+            scanner.nextLine(); // consume the newline
+
+            if (animalChoice < 1 || animalChoice > habitatSeleccionado.getAnimales().size()) {
+                System.out.println("No se reconoce el animal seleccionado.");
+                return;
+            }
+
+            Animal animalSeleccionado = habitatSeleccionado.getAnimales().get(animalChoice - 1);
             Visitante visitante = new Visitante("Juan", 25);
             visitante.visitarAnimal(animalSeleccionado);
         } else {
