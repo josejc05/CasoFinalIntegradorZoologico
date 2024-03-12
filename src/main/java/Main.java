@@ -12,9 +12,9 @@ public class Main {
 
         // Definir las variables
         String userType = "T"; // Aquí debes obtener el tipo de usuario de alguna manera
-        Habitat sabana = new Habitat(); // Aquí debes crear el hábitat de la sabana
-        Habitat oceano = new Habitat(); // Aquí debes crear el hábitat del océano
-        Habitat montanas = new Habitat(); // Aquí debes crear el hábitat de las montañas
+        Habitat sabana = new Habitat("Sabana", 100.0, 75.0, true); // Aquí debes crear el hábitat de la sabana
+        Habitat oceano = new Habitat("Océano", 200.0, 150.0, false); // Aquí debes crear el hábitat del océano
+        Habitat montanas = new Habitat("Montañas", 300.0, 225.0, true); // Aquí debes crear el hábitat de las montañas
 
         // ... (El resto de tu código se mantiene igual)
 
