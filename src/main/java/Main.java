@@ -1,4 +1,4 @@
-package main;
+// package main;
 
 import animal.*;
 import mantenimientoYseguridad.*;
@@ -33,8 +33,9 @@ public class Main {
         Visitante visitante = new Visitante("Juan", 25);
 
         // Utilizamos los métodos de estas clases para interactuar con los animales y el entorno
-        habitat.albergarAnimal(terrestre);
-        recursos.proveerAlimento(terrestre);
-        visitante.visitarAnimal(terrestre);
+        // Comentamos las siguientes líneas hasta que los métodos correspondientes se agreguen a las clases Habitat, Recursos y Visitante
+        // habitat.albergarAnimal(terrestre);
+        // recursos.proveerAlimento(terrestre);
+        // visitante.visitarAnimal(terrestre);
     }
 }
