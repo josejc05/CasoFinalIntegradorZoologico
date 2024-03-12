@@ -28,9 +28,9 @@ public class Main {
         aviario.mostrarInformacion();
 
         // Instanciamos las clases de las carpetas habitat, recursos y visitante
-        Habitat habitat = new Habitat();
-        Recursos recursos = new Recursos();
-        Visitante visitante = new Visitante();
+        Habitat habitat = new Habitat("Bosque", 100.0, 75.0, true);
+        Recursos recursos = new Recursos(10, 20, 30);
+        Visitante visitante = new Visitante("Juan", 25);
 
         // Utilizamos los métodos de estas clases para interactuar con los animales y el entorno
         habitat.albergarAnimal(terrestre);
