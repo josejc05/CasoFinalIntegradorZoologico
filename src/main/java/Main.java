@@ -18,6 +18,15 @@ public class Main {
         Habitat oceano = new Habitat("Océano", 200.0, 150.0, false); // Aquí debes crear el hábitat del océano
         Habitat montanas = new Habitat("Montañas", 300.0, 225.0, true); // Aquí debes crear el hábitat de las montañas
 
+        // Crear los animales y añadirlos a los hábitats
+        AnimalConcreto leon = new AnimalConcreto("León", "Carnívoro");
+        AnimalConcreto tiburon = new AnimalConcreto("Tiburón", "Carnívoro");
+        AnimalConcreto oso = new AnimalConcreto("Oso", "Omnívoro");
+
+        sabana.agregarAnimal(leon);
+        oceano.agregarAnimal(tiburon);
+        montanas.agregarAnimal(oso);
+
         if (userType.equalsIgnoreCase("T")) {
             System.out.println("Eres un trabajador. ¿Qué tarea quieres realizar? (Vigilar/Seguimiento)");
             String tarea = scanner.nextLine();
