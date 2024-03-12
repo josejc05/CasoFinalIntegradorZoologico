@@ -1,35 +1,54 @@
 package habitat;
 
-public class HabitatTerrestre extends Habitat {
-    private String tipoTerreno;
-    private boolean tieneCuevas;
+import java.util.ArrayList;
+import java.util.List;
+import animal.Animal;
 
-    public HabitatTerrestre(String id, double temperatura, double humedad, boolean limpieza, String tipoTerreno, boolean tieneCuevas) {
-        super(id, temperatura, humedad, limpieza);
-        this.tipoTerreno = tipoTerreno;
-        this.tieneCuevas = tieneCuevas;
+public class Habitat {
+    private String id;
+    private double temperatura;
+    private double humedad;
+    private boolean limpieza;
+    private List<Animal> animales;
+
+    public Habitat(String id, double temperatura, double humedad, boolean limpieza) {
+        this.id = id;
+        this.temperatura = temperatura;
+        this.humedad = humedad;
+        this.limpieza = limpieza;
+        this.animales = new ArrayList<>();
     }
 
-    public String getTipoTerreno() {
-        return tipoTerreno;
-    }
+    // getters y setters
 
-    public void setTipoTerreno(String tipoTerreno) {
-        this.tipoTerreno = tipoTerreno;
-    }
-
-    public boolean tieneCuevas() {
-        return tieneCuevas;
-    }
-
-    public void setTieneCuevas(boolean tieneCuevas) {
-        this.tieneCuevas = tieneCuevas;
-    }
-
-    @Override
     public void monitorear() {
-        super.monitorear();
-        System.out.println("Tipo de terreno: " + getTipoTerreno());
-        System.out.println("Tiene cuevas: " + (tieneCuevas() ? "Sí" : "No"));
+        System.out.println("ID: " + id);
+        System.out.println("Temperatura: " + temperatura);
+        System.out.println("Humedad: " + humedad);
+        System.out.println("Limpieza: " + (limpieza ? "Sí" : "No"));
+    }
+
+    public void agregarAnimal(Animal animal) {
+        this.animales.add(animal);
+    }
+
+    public void removerAnimal(Animal animal) {
+        this.animales.remove(animal);
+    }
+
+    public Animal buscarAnimal(String nombre) {
+        for (Animal animal : this.animales) {
+            if (animal.getNombre().equals(nombre)) {
+                return animal;
+            }
+        }
+        return null;
+    }
+
+    public void mostrarAnimales() {
+        System.out.println("Animales en el hábitat:");
+        for (Animal animal : this.animales) {
+            System.out.println("- " + animal.getNombre());
+        }
     }
 }
