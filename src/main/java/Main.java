@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-// package main;
-
 import animal.*;
 import mantenimientoYseguridad.*;
 import habitat.*;
@@ -12,73 +10,15 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Instanciamos las clases de la carpeta animal
-        Terrestre terrestre1 = new Terrestre("Elefante", "Herbívoro", "Saludable", "Pacífico", "Terrestre", "Sabana");
-        Terrestre terrestre2 = new Terrestre("León", "Carnívoro", "Saludable", "Agresivo", "Terrestre", "Sabana");
-        Terrestre terrestre3 = new Terrestre("Jirafa", "Herbívoro", "Saludable", "Pacífico", "Terrestre", "Sabana");
-        Acuatico acuatico1 = new Acuatico("Tiburón", "Carnívoro", "Saludable", "Agresivo", true, "Océano");
-        Acuatico acuatico2 = new Acuatico("Delfín", "Carnívoro", "Saludable", "Pacífico", true, "Océano");
-        Acuatico acuatico3 = new Acuatico("Ballena", "Herbívoro", "Saludable", "Pacífico", true, "Océano");
-        Aviario aviario1 = new Aviario("Águila", "Carnívoro", "Saludable", "Agresivo", true, 2000, "Montañas");
-        Aviario aviario2 = new Aviario("Halcón", "Carnívoro", "Saludable", "Agresivo", true, 2000, "Montañas");
-        Aviario aviario3 = new Aviario("Cóndor", "Carnívoro", "Saludable", "Agresivo", true, 2000, "Montañas");
+        // Definir las variables
+        String userType = "T"; // Aquí debes obtener el tipo de usuario de alguna manera
+        Habitat sabana = new Habitat(); // Aquí debes crear el hábitat de la sabana
+        Habitat oceano = new Habitat(); // Aquí debes crear el hábitat del océano
+        Habitat montanas = new Habitat(); // Aquí debes crear el hábitat de las montañas
 
-        // Instanciamos los hábitats y agregamos los animales a cada uno
-        Habitat sabana = new Habitat("Sabana", 100.0, 75.0, true);
-        sabana.agregarAnimal(terrestre1);
-        sabana.agregarAnimal(terrestre2);
-        sabana.agregarAnimal(terrestre3);
+        // ... (El resto de tu código se mantiene igual)
 
-        Habitat oceano = new Habitat("Océano", 200.0, 15.0, true);
-        oceano.agregarAnimal(acuatico1);
-        oceano.agregarAnimal(acuatico2);
-        oceano.agregarAnimal(acuatico3);
-
-        Habitat montanas = new Habitat("Montañas", 50.0, 10.0, true);
-        montanas.agregarAnimal(aviario1);
-        montanas.agregarAnimal(aviario2);
-        montanas.agregarAnimal(aviario3);
-
-        // Instanciamos la clase Vigilar de la carpeta mantenimientoYseguridad y la utilizamos para supervisar a los animales
-        // ...
-
-        // Instanciamos las clases de las carpetas habitat, recursos y visitante
-        // ...
-
-        System.out.println("¿Eres un trabajador o un visitante? (T/V)");
-        String userType = scanner.nextLine();
-
-        if (userType.equalsIgnoreCase("V")) {
-            System.out.println("¿Qué hábitat quieres visitar? (Sabana/Océano/Montañas)");
-            String habitatChoice = scanner.nextLine();
-
-            Habitat habitatSeleccionado;
-            switch (habitatChoice.toLowerCase()) {
-                case "sabana":
-                    habitatSeleccionado = sabana;
-                    break;
-                case "océano":
-                    habitatSeleccionado = oceano;
-                    break;
-                case "montañas":
-                    habitatSeleccionado = montanas;
-                    break;
-                default:
-                    System.out.println("No se reconoce el hábitat seleccionado.");
-                    return;
-            }
-
-            System.out.println("¿Qué animal quieres visitar? (1/2/3)");
-            int animalChoice = scanner.nextInt();
-
-            if (animalChoice < 1 || animalChoice > 3) {
-                System.out.println("No se reconoce el animal seleccionado.");
-                return;
-            }
-
-            Visitante visitante = new Visitante("Juan", 25);
-            visitante.visitarAnimal(habitatSeleccionado.getAnimales().get(animalChoice - 1));
-        } if (userType.equalsIgnoreCase("T")) {
+        if (userType.equalsIgnoreCase("T")) {
             System.out.println("Eres un trabajador. ¿Qué tarea quieres realizar? (Vigilar/Seguimiento)");
             String tarea = scanner.nextLine();
 
@@ -102,8 +42,8 @@ public class Main {
                         return;
                 }
 
-                Vigilar vigilante = new Vigilar("Pedro", 30);
-                vigilante.vigilarHabitat(habitatSeleccionado);
+                Vigilar vigilante = new Vigilar("Pedro", 30, habitatSeleccionado);
+                vigilante.vigilarHabitat();
 
             } else if (tarea.equalsIgnoreCase("Seguimiento")) {
                 System.out.println("¿Qué hábitat quieres seleccionar para el seguimiento? (Sabana/Océano/Montañas)");
@@ -133,8 +73,8 @@ public class Main {
                     return;
                 }
 
-                Seguimiento seguimiento = new Seguimiento("Pedro", 30);
-                seguimiento.hacerSeguimiento(habitatSeleccionado.getAnimales().get(animalChoice - 1));
+                Seguimiento seguimiento = new Seguimiento("Pedro", 30, habitatSeleccionado.getAnimales().get(animalChoice - 1));
+                seguimiento.hacerSeguimiento();
             } else {
                 System.out.println("No se reconoce la tarea seleccionada.");
             }
