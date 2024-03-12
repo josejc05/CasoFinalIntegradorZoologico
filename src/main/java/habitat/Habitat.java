@@ -48,4 +48,10 @@ public class Habitat {
         System.out.println("Humedad: " + humedad);
         System.out.println("Limpieza: " + (limpieza ? "Limpio" : "Sucio"));
     }
+
+    public void mostrarAnimales() {
+        for (int i = 0; i < animales.size(); i++) {
+            System.out.println((i + 1) + ". " + animales.get(i).getNombre());
+        }
+    }
 }
