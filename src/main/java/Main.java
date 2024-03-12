@@ -13,9 +13,9 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         // Instanciamos las clases de la carpeta animal
-        Terrestre terrestre = new Terrestre("Elefante", "Herbívoro", "Saludable", "Pacífico", "Terrestre");
-        Acuatico acuatico = new Acuatico("Tiburón", "Carnívoro", "Saludable", "Agresivo", true);
-        Aviario aviario = new Aviario("Águila", "Carnívoro", "Saludable", "Agresivo", true, 2000);
+        Terrestre terrestre = new Terrestre("Elefante", "Herbívoro", "Saludable", "Pacífico", "Terrestre", "Sabana");
+        Acuatico acuatico = new Acuatico("Tiburón", "Carnívoro", "Saludable", "Agresivo", true, "Océano");
+        Aviario aviario = new Aviario("Águila", "Carnívoro", "Saludable", "Agresivo", true, 2000, "Montañas");
 
         // Instanciamos la clase Vigilar de la carpeta mantenimientoYseguridad y la utilizamos para supervisar a los animales
         Vigilar vigilarTerrestre = new Vigilar(terrestre);
