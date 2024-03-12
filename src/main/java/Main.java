@@ -11,7 +11,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         // Definir las variables
-        System.out.println("¿Eres un visitante o un trabajador? (V/T)");
+        System.out.println("¿Eres un visitante, un trabajador o deseas ver los recursos del zoológico? (V/T/R)");
         String userType = scanner.nextLine(); // Aquí el usuario introduce su tipo
 
         Habitat acuatico = new Habitat("Acuático", 100.0, 75.0, true);
@@ -42,6 +42,9 @@ public class Main {
         terrestre.agregarAnimal(leon);
         terrestre.agregarAnimal(elefante);
         terrestre.agregarAnimal(jirafa);
+
+        // Crear los recursos
+        Recursos recursos = new Recursos(100, 50, 30); // Asegúrate de ajustar estos valores a los recursos actuales del zoológico
 
         if (userType.equalsIgnoreCase("T")) {
             System.out.println("Eres un trabajador. ¿Qué tarea quieres realizar? (Vigilar/Seguimiento)");
@@ -92,7 +95,7 @@ public class Main {
                         return;
                 }
 
-                System.out.println("¿Qué animal quieres seleccionar para el seguimiento?(1,2,3)");
+                System.out.println("¿Qué animal quieres seleccionar para el seguimiento?");
                 for (int i = 0; i < habitatSeleccionado.getAnimales().size(); i++) {
                     System.out.println((i + 1) + ". " + habitatSeleccionado.getAnimales().get(i).getNombre());
                 }
@@ -142,6 +145,8 @@ public class Main {
             Animal animalSeleccionado = habitatSeleccionado.getAnimales().get(animalChoice - 1);
             Visitante visitante = new Visitante("Juan", 25);
             visitante.visitarAnimal(animalSeleccionado);
+        } else if (userType.equalsIgnoreCase("R")) {
+            recursos.gestionarRecursos();
         } else {
             System.out.println("No se reconoce el tipo de usuario seleccionado.");
         }
