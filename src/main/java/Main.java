@@ -67,6 +67,8 @@ public class Main {
                         return;
                 }
 
+                System.out.println("Estás vigilando el hábitat: " + habitatSeleccionado.getId()); // Línea agregada
+
                 Vigilar vigilante = new Vigilar("Pedro", 30, habitatSeleccionado);
                 vigilante.vigilarHabitat();
 

@@ -26,6 +26,6 @@ public class Vigilar {
     }
 
     public void vigilarHabitat() {
-        System.out.println("El trabajador " + nombre + " está vigilando el hábitat: " + habitat);
+        System.out.println("");
     }
 }
