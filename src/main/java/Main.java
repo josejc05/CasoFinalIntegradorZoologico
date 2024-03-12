@@ -76,8 +76,9 @@ public class Main {
 
                 System.out.println("¿Qué animal quieres seleccionar para el seguimiento? (1/2/3)");
                 int animalChoice = scanner.nextInt();
+                scanner.nextLine(); // consume the newline
 
-                if (animalChoice < 1 || animalChoice > 3) {
+                if (animalChoice < 1 || animalChoice > habitatSeleccionado.getAnimales().size()) {
                     System.out.println("No se reconoce el animal seleccionado.");
                     return;
                 }
