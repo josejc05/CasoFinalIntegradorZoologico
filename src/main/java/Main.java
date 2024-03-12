@@ -2,6 +2,9 @@ package main;
 
 import animal.*;
 import mantenimientoYseguridad.*;
+import habitat.*;
+import recursos.*;
+import visitante.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -24,6 +27,14 @@ public class Main {
         acuatico.mostrarInformacion();
         aviario.mostrarInformacion();
 
-        // Aquí puedes agregar el código para instanciar y utilizar las clases de las carpetas habitat, recursos y visitante
+        // Instanciamos las clases de las carpetas habitat, recursos y visitante
+        Habitat habitat = new Habitat();
+        Recursos recursos = new Recursos();
+        Visitante visitante = new Visitante();
+
+        // Utilizamos los métodos de estas clases para interactuar con los animales y el entorno
+        habitat.albergarAnimal(terrestre);
+        recursos.proveerAlimento(terrestre);
+        visitante.visitarAnimal(terrestre);
     }
 }
