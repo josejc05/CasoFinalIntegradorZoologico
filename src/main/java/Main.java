@@ -46,13 +46,13 @@ public class Main {
 
             switch (animalChoice.toLowerCase()) {
                 case "elefante":
-                    visitante.visitarAnimal(terrestre);
+                    // visitante.visitarAnimal(terrestre);
                     break;
                 case "tiburón":
-                    visitante.visitarAnimal(acuatico);
+                    // visitante.visitarAnimal(acuatico);
                     break;
                 case "águila":
-                    visitante.visitarAnimal(aviario);
+                    // visitante.visitarAnimal(aviario);
                     break;
                 default:
                     System.out.println("No se reconoce el animal seleccionado.");
