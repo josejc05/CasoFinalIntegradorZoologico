@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 // package main;
 
 import animal.*;
@@ -8,6 +10,8 @@ import visitante.*;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
         // Instanciamos las clases de la carpeta animal
         Terrestre terrestre = new Terrestre("Elefante", "Herbívoro", "Saludable", "Pacífico", "Terrestre");
         Acuatico acuatico = new Acuatico("Tiburón", "Carnívoro", "Saludable", "Agresivo", true);
@@ -30,12 +34,34 @@ public class Main {
         // Instanciamos las clases de las carpetas habitat, recursos y visitante
         Habitat habitat = new Habitat("Bosque", 100.0, 75.0, true);
         Recursos recursos = new Recursos(10, 20, 30);
-        Visitante visitante = new Visitante("Juan", 25);
 
-        // Utilizamos los métodos de estas clases para interactuar con los animales y el entorno
-        // Comentamos las siguientes líneas hasta que los métodos correspondientes se agreguen a las clases Habitat, Recursos y Visitante
-        // habitat.albergarAnimal(terrestre);
-        // recursos.proveerAlimento(terrestre);
-        // visitante.visitarAnimal(terrestre);
+        System.out.println("¿Eres un trabajador o un visitante? (T/V)");
+        String userType = scanner.nextLine();
+
+        if (userType.equalsIgnoreCase("V")) {
+            System.out.println("¿Qué animal quieres visitar? (Elefante/Tiburón/Águila)");
+            String animalChoice = scanner.nextLine();
+
+            Visitante visitante = new Visitante("Juan", 25);
+
+            switch (animalChoice.toLowerCase()) {
+                case "elefante":
+                    visitante.visitarAnimal(terrestre);
+                    break;
+                case "tiburón":
+                    visitante.visitarAnimal(acuatico);
+                    break;
+                case "águila":
+                    visitante.visitarAnimal(aviario);
+                    break;
+                default:
+                    System.out.println("No se reconoce el animal seleccionado.");
+                    break;
+            }
+        } else if (userType.equalsIgnoreCase("T")) {
+            System.out.println("Eres un trabajador. Realiza tus tareas.");
+        } else {
+            System.out.println("No se reconoce el tipo de usuario seleccionado.");
+        }
     }
 }
