@@ -26,11 +26,6 @@ public class Main {
         vigilarAcuatico.supervisarAnimal();
         vigilarAviario.supervisarAnimal();
 
-        // Llamamos al método mostrarInformacion() para cada animal
-        terrestre.mostrarInformacion();
-        acuatico.mostrarInformacion();
-        aviario.mostrarInformacion();
-
         // Instanciamos las clases de las carpetas habitat, recursos y visitante
         Habitat habitat = new Habitat("Bosque", 100.0, 75.0, true);
         Recursos recursos = new Recursos(10, 20, 30);
@@ -47,12 +42,15 @@ public class Main {
             switch (animalChoice.toLowerCase()) {
                 case "elefante":
                     // visitante.visitarAnimal(terrestre);
+                    terrestre.mostrarInformacion();
                     break;
                 case "tiburón":
                     // visitante.visitarAnimal(acuatico);
+                    acuatico.mostrarInformacion();
                     break;
                 case "águila":
                     // visitante.visitarAnimal(aviario);
+                    aviario.mostrarInformacion();
                     break;
                 default:
                     System.out.println("No se reconoce el animal seleccionado.");
