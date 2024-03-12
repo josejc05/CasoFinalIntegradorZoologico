@@ -92,7 +92,10 @@ public class Main {
                         return;
                 }
 
-                System.out.println("¿Qué animal quieres seleccionar para el seguimiento? (1/2/3)");
+                System.out.println("¿Qué animal quieres seleccionar para el seguimiento?(1,2,3)");
+                for (int i = 0; i < habitatSeleccionado.getAnimales().size(); i++) {
+                    System.out.println((i + 1) + ". " + habitatSeleccionado.getAnimales().get(i).getNombre());
+                }
                 int animalChoice = scanner.nextInt();
                 scanner.nextLine(); // consume the newline
 
